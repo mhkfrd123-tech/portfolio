@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=IBM+Plex+Sans:wght@400;500&display=swap');
+
+* { box-sizing: border-box; }
+
+body {
+    font-family: 'IBM Plex Sans', sans-serif;
+    background-color: #fbfaf8;
+    color: #1d2b27;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 50px 24px;
+    line-height: 1.65;
+    counter-reset: cell;
+}
+
+header {
+    margin-bottom: 50px;
+}
+
+.titlename {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1.6em;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+}
+
+.title {
+    color: #4a5750;
+    font-size: 0.95em;
+    font-family: 'IBM Plex Mono', monospace;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* каждая секция — "ячейка ноутбука" */
+.cell {
+    counter-increment: cell;
+    position: relative;
+    padding: 18px 0 18px 70px;
+    border-top: 1px solid #d8d3c4;
+}
+
+.cell::before {
+    content: "In [" counter(cell) "]:";
+    position: absolute;
+    left: 0;
+    top: 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85em;
+    color: #2f6f4e;
+}
+
+.cell h3 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1em;
+    font-weight: 600;
+    color: #1d2b27;
+    margin: 0 0 8px 0;
+}
+
+.cell h4 {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 1em;
+    margin: 0 0 8px 0;
+}
+
+.cell p {
+    margin: 0;
+    color: #33403a;
+}
+
+a {
+    color: #2f6f4e;
+    text-decoration: underline;
+    text-decoration-color: #b7ccc0;
+    text-underline-offset: 3px;
+}
+
+a:hover {
+    text-decoration-color: #2f6f4e;
+}
+
+footer {
+    margin-top: 40px;
+    padding-top: 18px;
+    border-top: 1px solid #d8d3c4;
+    font-size: 0.85em;
+    color: #6b6f6a;
+    font-family: 'IBM Plex Mono', monospace;
+}
